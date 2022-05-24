@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="VI.AOD.NeuralNetworkDataManager.View.SleeperImagesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VI.AOD.NeuralNetworkDataManager.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>              
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="300" MinHeight="100"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Content="Copied"  Grid.Row="0" Grid.ColumnSpan="6" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14" Visibility="{Binding IsCopiedVisibility, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Grid.Row="1" Grid.Column= "0" Command="{Binding PeviewIndexCommand}" Margin="3"/>
+        <Image Grid.Row="1" Grid.Column= "1"  Source="{Binding OuterA.FilePath}" Margin="3"/>
+        <Image Grid.Row="1" Grid.Column= "2" Source="{Binding OuterB.FilePath}" Margin="3"/>
+        <Image Grid.Row="1" Grid.Column= "3" Source="{Binding InnerA.FilePath}" Margin="3"/>
+        <Image Grid.Row="1" Grid.Column= "4" Source="{Binding InnerB.FilePath}" Margin="3"/>
+        <Button Grid.Row="1" Grid.Column= "5" Command="{Binding NextIndexCommand}" Margin="3" />
+        <Grid Grid.Row="2" Grid.ColumnSpan="6" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width = "Auto" />
+                <ColumnDefinition Width = "Auto"/>
+                <ColumnDefinition Width = "Auto"/>
+                <ColumnDefinition Width = "200"/>
+                <ColumnDefinition Width = "Auto"/>
+                <ColumnDefinition Width = "Auto"/>
+                <ColumnDefinition Width = "Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>                
+            </Grid.RowDefinitions>
+            <TextBox Grid.Row="0" Grid.Column= "0" Text="{Binding FrameNo}" Margin="3"/>
+            <Label Grid.Row="0" Grid.Column= "1" Content="/" Margin="3"/>
+            <TextBox Grid.Row="0" Grid.Column= "2" Text="{Binding MaxFrameNo}" Margin="3"/>
+
+            <TextBox Grid.Row="0" Grid.Column= "4" Text="{Binding Index}" Margin="3" />
+            <Label Grid.Row="0" Grid.Column= "5" Content="/" Margin="3" />
+            <TextBox Grid.Row="0" Grid.Column= "6" Text="{Binding MaxIndex}" Margin="3"/>
+        </Grid>
+            
+    </Grid>
+</UserControl>

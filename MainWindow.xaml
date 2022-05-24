@@ -1,0 +1,39 @@
+﻿<Window x:Class="VI.AOD.NeuralNetworkDataManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NeuralNetworkDataManager"
+        xmlns:xc="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:view="clr-namespace:VI.AOD.NeuralNetworkDataManager.View"
+        mc:Ignorable="d"
+        Title="Neural Network Data Manager" Height="450" Width="800" >
+    <Grid>
+        <TabControl >
+            <TabItem Header="Set records">
+                <view:SetRecordView DataContext="{Binding SetRecordsTab}"/>
+            </TabItem>
+            <TabItem Header="Set back track">
+                <view:SetRecordBackTrackView DataContext="{Binding SetRecordBackTrackTab}"/>
+            </TabItem>
+            <TabItem Header="Separate on folders">
+                <view:SeparateOnFoldersView DataContext="{Binding SeparateOnFolders}"/>
+            </TabItem>
+            <TabItem Header="Copy only checked">
+                <view:CopyOnlyCheckedView DataContext="{Binding CopyOnlyChecked}"/>
+            </TabItem>
+            <TabItem Header="Results statistics">
+                <view:ShowStatisticsView DataContext="{Binding ShowStatistics}"/>
+            </TabItem>
+            <TabItem Header="Results statistics">
+                <view:NeuralNetworkDataComparerView DataContext="{Binding NeuralNetworkDataComparer}"/>
+            </TabItem>
+            <TabItem Header="Merge results">
+                <view:MergeResultsView DataContext="{Binding MergeResults}"/>
+            </TabItem>
+            <TabItem Header="Merge results">
+                <view:MergedResultForWholeSleeperView DataContext="{Binding MergedResultForWholeSleeper}"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
